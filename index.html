@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>For Shahod ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#ffe4ec,#fff7fa);
+    overflow-x:hidden;
+    color:#444;
+}
+
+.container{
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:40px 20px;
+    text-align:center;
+}
+
+/* Title */
+
+h1{
+    font-size:4rem;
+    color:#ff4f81;
+    margin-bottom:10px;
+    animation:fadeIn 2s ease;
+}
+
+.subtitle{
+    color:#777;
+    margin-bottom:30px;
+    font-size:1.2rem;
+}
+
+/* Lock Box */
+
+.lock-box{
+
+    width:90%;
+    max-width:500px;
+
+    background:rgba(255,255,255,0.85);
+
+    backdrop-filter:blur(12px);
+
+    padding:35px;
+
+    border-radius:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    text-align:center;
+}
+
+.lock-box h2{
+    color:#ff4f81;
+    margin-bottom:15px;
+}
+
+.hint{
+    color:#777;
+    margin-bottom:20px;
+}
+
+.lock-box input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    outline:none;
+
+    margin-bottom:20px;
+
+    font-size:1rem;
+
+    text-align:center;
+
+    background:#fff;
+}
+
+.open-btn{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff4f81;
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:0 10px 30px rgba(255,79,129,0.3);
+}
+
+.open-btn:hover{
+    transform:scale(1.07);
+}
+
+#error{
+    margin-top:15px;
+    color:red;
+    font-size:0.95rem;
+}
+
+/* Hidden Content */
+
+.hidden{
+    display:none;
+}
+
+#content{
+    width:100%;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Counter */
+
+.love-counter{
+
+    margin-top:40px;
+
+    width:90%;
+    max-width:550px;
+
+    background:rgba(255,255,255,0.85);
+
+    backdrop-filter:blur(10px);
+
+    padding:25px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    text-align:center;
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.love-counter h2{
+    color:#ff4f81;
+    margin-bottom:15px;
+}
+
+#timer{
+    font-size:1.3rem;
+    font-weight:600;
+    color:#555;
+    line-height:2;
+}
+
+/* Gallery */
+
+.gallery{
+
+    margin-top:40px;
+
+    width:100%;
+    max-width:1200px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:22px;
+}
+
+.couple-photos{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:22px;
+
+    flex-wrap:wrap;
+
+    margin-top:22px;
+}
+
+.couple-photos .card{
+
+    width:230px;
+}
+
+.card{
+    overflow:hidden;
+    border-radius:25px;
+    background:white;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+
+.card img{
+    width:100%;
+    height:330px;
+    object-fit:cover;
+}
+
+/* Song Box */
+
+.song-box{
+
+    margin-top:45px;
+
+    width:90%;
+    max-width:650px;
+
+    background:rgba(255,255,255,0.82);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    text-align:center;
+}
+
+.song-box h2{
+
+    color:#ff4f81;
+
+    margin-bottom:20px;
+
+    font-size:2rem;
+}
+
+.song-player{
+
+    background:#fff;
+
+    border-radius:25px;
+
+    padding:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.song-player p{
+
+    margin-bottom:15px;
+
+    color:#666;
+
+    font-size:1rem;
+}
+
+.song-player audio{
+
+    width:100%;
+
+    height:55px;
+
+    border-radius:20px;
+}
+
+/* Message */
+
+.message{
+
+    margin-top:45px;
+
+    width:90%;
+    max-width:750px;
+
+    background:rgba(255,255,255,0.78);
+
+    backdrop-filter:blur(12px);
+
+    padding:30px;
+
+    border-radius:25px;
+
+    line-height:2;
+
+    font-size:1.1rem;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    text-align:center;
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* Hearts */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.heart{
+    position:absolute;
+    color:#ff6b9d;
+    animation:float 8s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(100vh) scale(0);
+    }
+
+    100%{
+        transform:translateY(-10vh) scale(1.5);
+    }
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="container">
+
+    <h1>Shahody ❤️</h1>
+
+    <p class="subtitle">
+        A little gift made with love ✨
+    </p>
+
+    <!-- Lock Screen -->
+
+    <div class="lock-box">
+
+        <h2>🔒 Private Gift For Shahodty</h2>
+
+        <p class="hint">
+            Password Hint: The month we fell in love 💕
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password..."
+        >
+
+        <button class="open-btn" onclick="checkPassword()">
+            Unlock Gift ✨
+        </button>
+
+        <p id="error"></p>
+
+    </div>
+
+    <!-- Hidden Content -->
+
+    <div id="content" class="hidden">
+
+        <!-- Counter -->
+
+        <div class="love-counter">
+
+            <h2>Since I Told You I Love You ❤️</h2>
+
+            <p id="timer"></p>
+
+        </div>
+
+        <!-- صورها -->
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/her1.jpg">
+            </div>
+
+            <div class="card">
+                <img src="images/her2.jpg">
+            </div>
+
+            <div class="card">
+                <img src="images/her3.jpg">
+            </div>
+
+            <div class="card">
+                <img src="images/her4.jpg">
+            </div>
+
+        </div>
+
+        <!-- صوركم -->
+
+        <div class="couple-photos">
+
+            <div class="card">
+                <img src="images/us1.jpg">
+            </div>
+
+            <div class="card">
+                <img src="images/us2.webp">
+            </div>
+
+            <div class="card">
+                <img src="images/us3.jpg">
+            </div>
+
+        </div>
+
+        <!-- Our Song -->
+
+        <div class="song-box">
+
+            <h2>🎵 Our Song</h2>
+
+            <div class="song-player">
+
+                <p>
+                    A song that will always remind me of you 💖
+                </p>
+
+                <audio id="ourSong" controls loop>
+                    <source src="music.mp3" type="audio/mp3">
+                </audio>
+
+            </div>
+
+        </div>
+
+        <!-- Message -->
+
+        <div class="message">
+
+            Every Eid with you feels warmer,
+            softer,
+            and more beautiful ❤️ <br><br>
+
+            You are not just my favorite person...
+            you became my comfort,
+            my happiness,
+            and the sweetest part of my life ✨ <br><br>
+
+            Since October 1st, 2023,
+            my days changed because of you 💖 <br><br>
+
+            Every moment with you became a memory I never want to lose 🌸 <br><br>
+
+            And honestly... <br>
+            every Eid with you is my favorite Eid 🫶 <br><br>
+
+            Thank you for every smile,
+            every laugh,
+            every little detail,
+            and every feeling you give me ❤️ <br><br>
+
+            I love you my 🍦 ✨ <br><br>
+
+            Eid Mubarak, Shahodty 💕
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* Unlock */
+
+function checkPassword(){
+
+    const password = document.getElementById("password").value;
+
+    if(password === "10"){
+
+        const content = document.getElementById("content");
+
+        content.classList.remove("hidden");
+
+        content.style.display = "flex";
+
+        document.querySelector(".lock-box").style.display = "none";
+
+        /* تشغيل الأغنية */
+
+        document.getElementById("ourSong").play();
+
+    }else{
+
+        document.getElementById("error").innerHTML =
+        "Wrong password 💔";
+    }
+}
+
+/* Counter */
+
+const startDate = new Date("2023-10-01T00:00:00");
+
+function updateTimer(){
+
+    const now = new Date();
+
+    const diff = now - startDate;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("timer").innerHTML =
+        `${days} Days 💕 ${hours} Hours 💕 ${minutes} Minutes 💕 ${seconds} Seconds`;
+}
+
+updateTimer();
+
+setInterval(updateTimer,1000);
+
+/* Hearts */
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML = "❤";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+
+    document.querySelector(".hearts").appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },8000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
